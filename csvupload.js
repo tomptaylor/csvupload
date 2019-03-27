@@ -64,24 +64,22 @@ csv
     console.log('on end >>>>>>>>>>>>>>');
     var objNew = {};
     var guid = '';
-      Promise.all(
+    var allresults = await Promise.all(
           Object.keys(objDistricts).map(async (key, index) => {
               try {
                 let response = await sendit(objDistricts[key]); 
-console.log('!!!!!!!!!!!!!!!!!'+key+' '+response.id);
-
                 objNew[`'${key}'`]= `'${response.id}'`;
-                resolve(objNew);
                 }
                 catch(err) {
                     console.log('Got an error:', err.message)
                 }
-        })).then( (objNew) => {
+        }))
+//        .then( (objNew) => {
    console.dir(objNew);
     sendit(objNew);
     res.writeHead(200, { 'Content-Type': 'text/html '});
     res.end('<h1>file uploaded!</h1>' );
- });
+ // });
  });
 
 };
