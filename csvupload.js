@@ -47,6 +47,7 @@ csv
         if (strLastDist !== arrstr[0]) {
             if (strLastDist === ''){
                 strLastDist = arrstr[0]; 
+                console.log(arrstr[0]);
             } else {
 //            let results = await Promise.all([
   //          sendit(arrSchool, strLastDist);
