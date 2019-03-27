@@ -70,12 +70,11 @@ csv
  .on("end", function(){
   // sendit(Districts);
     console.log('on end >>>>>>>>>>>>>>');
+    var objNew = {};
       Promise.all(
-    districts.map(async district => {
-      const userId = await sendit(district)
-      console.log(userId)
-
-    })
+          Object.keys(objDistricts).map(async (key, index) => {
+            objNew[key]= await sendit(objDistricts[key]);
+        }));
   )
 
     
