@@ -5,7 +5,6 @@ const formidable = require('formidable-memory');
 const csv = require('fast-csv');
 const request = require('request');
 
-const requestPromise = util.promisify(request);
 module.exports = function (context, req, res) {
 var arrstr = [];
 var arrSchool = [];
