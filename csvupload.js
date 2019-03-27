@@ -70,7 +70,8 @@ csv
                 let response = await sendit(objDistricts[key]); 
 console.log('!!!!!!!!!!!!!!!!!'+key+' '+response.id);
 
-                objNew[key]= response.id;
+                objNew[`'${key}'`]= `'${response.id}'`;
+                console.log(objNew);
                 }
                 catch(err) {
                     console.log('Got an error:', err.message)
