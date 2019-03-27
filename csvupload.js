@@ -70,11 +70,12 @@ csv
               let response = await sendit(objDistricts[key]); 
 let json = JSON.parse(response); 
     console.log(json);   
+//            objNew[key]= body.id
+
 }
 catch(err) {
     console.log('Got an error:', err.message)
 }
-          //  objNew[key]= body.id
         })).then( objNew => {
    console.dir(objNew);
     sendit(objNew);
