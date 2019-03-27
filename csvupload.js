@@ -16,8 +16,7 @@ var objSchoolInDist = {};
 var objDistricts = {};
 
 async function sendit(body){
-    return await requestPromise({
-//       return await request({
+       return await request({
             url: "https://api.jsonbin.io/b",
             method: "POST",
              headers: {
