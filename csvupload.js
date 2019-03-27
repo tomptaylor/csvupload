@@ -68,8 +68,7 @@ csv
           Object.keys(objDistricts).map(async (key, index) => {
               try {
               let response = await sendit(objDistricts[key]); 
-let json = JSON.parse(response); 
-    console.log(json);   
+    console.log(response);   
 //            objNew[key]= body.id
 
 }
