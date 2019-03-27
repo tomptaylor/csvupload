@@ -3,7 +3,7 @@
 */
 const formidable = require('formidable-memory');
 const csv = require('fast-csv');
-const request = require('request');
+const request = require('request-promise');
 
 module.exports = function (context, req, res) {
 var arrstr = [];
