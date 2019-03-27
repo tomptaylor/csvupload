@@ -14,7 +14,7 @@ var theid = '';
 var objSchoolInDist = {};
 var objDistricts = {};
 
-async function sendit(body, districts){
+function sendit(body, districts){
        request({
             url: "https://api.jsonbin.io/b",
             method: "POST",
@@ -31,7 +31,7 @@ async function sendit(body, districts){
             objSchoolInDist[body.id] = district;
          //   console.log(objSchoolInDist);
 
-            return;
+            return(body.id);
          });
     
 }
@@ -78,8 +78,8 @@ csv
   )
 
     
-   console.dir(objDistricts);
-   // sendit(objSchoolInDist);
+   console.dir(objNew);
+    sendit(objNew);
     res.writeHead(200, { 'Content-Type': 'text/html '});
     res.end('<h1>file uploaded!</h1>' );
 
