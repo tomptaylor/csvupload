@@ -26,10 +26,10 @@ async function sendit(body, district){
             json: true,   // <--Very important!!!
             body: body
         }, function (error, response, body){
-            console.log(body.id);
+         //   console.log(body.id);
             
             objSchoolInDist[body.id] = district;
-            console.log(objSchoolInDist);
+         //   console.log(objSchoolInDist);
 
             return;
          });
@@ -50,6 +50,7 @@ csv
             } else {
 //            let results = await Promise.all([
   //          sendit(arrSchool, strLastDist);
+  console.log(strLastDist);
             objDistricts[strLastDist] = arrSchool;
             arrSchool = []; 
             arrDistrict.push(strLastDist);
@@ -70,8 +71,8 @@ csv
  })
  .on("end", function(){
   // sendit(arrDistrict);
-    console.log('on end >>>>>>>>>>>>>>');
-    console.dir(objDistricts);
+  //  console.log('on end >>>>>>>>>>>>>>');
+  //  console.dir(objDistricts);
    // sendit(objSchoolInDist);
     res.writeHead(200, { 'Content-Type': 'text/html '});
     res.end('<h1>file uploaded!</h1>' );
