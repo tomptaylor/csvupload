@@ -28,7 +28,7 @@ function sendit(body, districts){
         }, function (error, response, body){
          //   console.log(body.id);
             
-            objSchoolInDist[body.id] = district;
+         //   objSchoolInDist[body.id] = district;
          //   console.log(objSchoolInDist);
 
             return(body.id);
