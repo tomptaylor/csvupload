@@ -59,7 +59,7 @@ csv
     }
     i++;
  })
- .on("end", function(){
+ .on("end", async function(){
   // sendit(Districts);
     console.log('on end >>>>>>>>>>>>>>');
     var objNew = {};
