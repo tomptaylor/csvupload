@@ -77,12 +77,12 @@ csv
             guid = await sendit(objDistricts[key]);
             console.log('guid'+guid )
             objNew[key]= guid;
-        })).then(
+        })).then( objNew => {
    console.dir(objNew);
     sendit(objNew);
     res.writeHead(200, { 'Content-Type': 'text/html '});
     res.end('<h1>file uploaded!</h1>' );
-        )
+ });
  });
 
 };
