@@ -31,7 +31,7 @@ function sendit(body, districts){
          //   objSchoolInDist[body.id] = district;
          //   console.log(objSchoolInDist);
 
-            return(body.id);
+            resolve(body.id);
          });
     
 }
