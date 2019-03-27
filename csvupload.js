@@ -75,9 +75,6 @@ csv
           Object.keys(objDistricts).map(async (key, index) => {
             objNew[key]= await sendit(objDistricts[key]);
         }));
-  )
-
-    
    console.dir(objNew);
     sendit(objNew);
     res.writeHead(200, { 'Content-Type': 'text/html '});
