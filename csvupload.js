@@ -71,12 +71,12 @@ csv
 console.log('!!!!!!!!!!!!!!!!!'+key+' '+response.id);
 
                 objNew[`'${key}'`]= `'${response.id}'`;
-                console.log(objNew);
+                resolve(objNew);
                 }
                 catch(err) {
                     console.log('Got an error:', err.message)
                 }
-        })).then( objNew => {
+        })).then( (objNew) => {
    console.dir(objNew);
     sendit(objNew);
     res.writeHead(200, { 'Content-Type': 'text/html '});
