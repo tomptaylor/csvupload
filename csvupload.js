@@ -5,6 +5,7 @@ const formidable = require('formidable-memory');
 const csv = require('fast-csv');
 const request = require('request');
 
+const requestPromise = util.promisify(request);
 module.exports = function (context, req, res) {
 var arrstr = [];
 var arrSchool = [];
@@ -15,7 +16,8 @@ var objSchoolInDist = {};
 var objDistricts = {};
 
 async function sendit(body){
-       return await request({
+    return await requestPromise({
+//       return await request({
             url: "https://api.jsonbin.io/b",
             method: "POST",
              headers: {
