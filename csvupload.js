@@ -68,7 +68,7 @@ csv
           Object.keys(objDistricts).map(async (key, index) => {
               try {
                 let response = await sendit(objDistricts[key]); 
-console.log(key+' '+response.id);
+console.log('!!!!!!!!!!!!!!!!!'+key+' '+response.id);
 
                 objNew[key]= response.id;
                 }
