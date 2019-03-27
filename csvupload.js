@@ -71,15 +71,18 @@ csv
   // sendit(Districts);
     console.log('on end >>>>>>>>>>>>>>');
     var objNew = {};
+    var guid = '';
       Promise.all(
           Object.keys(objDistricts).map(async (key, index) => {
-            objNew[key]= await sendit(objDistricts[key]);
-        }));
+            guid = await sendit(objDistricts[key]);
+            console.log('guid'+guid )
+            objNew[key]= guid;
+        })).then(
    console.dir(objNew);
     sendit(objNew);
     res.writeHead(200, { 'Content-Type': 'text/html '});
     res.end('<h1>file uploaded!</h1>' );
-
+        )
  });
 
 };
