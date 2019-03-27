@@ -14,7 +14,7 @@ var theid = '';
 var objSchoolInDist = {};
 var objDistricts = {};
 
-function sendit(body, districts){
+function sendit(body){
        request({
             url: "https://api.jsonbin.io/b",
             method: "POST",
