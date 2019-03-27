@@ -66,9 +66,10 @@ csv
     var guid = '';
       Promise.all(
           Object.keys(objDistricts).map(async (key, index) => {
-            guid = await sendit(objDistricts[key]);     
-            console.log(guid.body)       
-            objNew[key]= guid.body.id
+            guid = await sendit(objDistricts[key]);  
+             const json = await guid.json();
+    console.log(json);   
+            objNew[key]= json.body.id
         })).then( objNew => {
    console.dir(objNew);
     sendit(objNew);
