@@ -50,7 +50,7 @@ csv
             } else {
 //            let results = await Promise.all([
   //          sendit(arrSchool, strLastDist);
-  console.log(strLastDist);
+  console.log('********'+strLastDist);
             objDistricts[strLastDist] = arrSchool;
             arrSchool = []; 
             arrDistrict.push(strLastDist);
