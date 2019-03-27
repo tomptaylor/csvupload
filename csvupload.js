@@ -47,14 +47,11 @@ csv
         if (strLastDist !== arrstr[0]) {
             if (strLastDist === ''){
                 strLastDist = arrstr[0]; 
-                console.log(arrstr[0]);
             } else {
 //            let results = await Promise.all([
   //          sendit(arrSchool, strLastDist);
-  console.log('********'+strLastDist);
             objDistricts[strLastDist] = arrSchool;
             arrSchool = []; 
-            arrDistrict.push(strLastDist);
             strLastDist = arrstr[0];
             }
         }
@@ -72,8 +69,8 @@ csv
  })
  .on("end", function(){
   // sendit(arrDistrict);
-  //  console.log('on end >>>>>>>>>>>>>>');
-  //  console.dir(objDistricts);
+    console.log('on end >>>>>>>>>>>>>>');
+   console.dir(objDistricts);
    // sendit(objSchoolInDist);
     res.writeHead(200, { 'Content-Type': 'text/html '});
     res.end('<h1>file uploaded!</h1>' );
