@@ -25,8 +25,7 @@ async function sendit(body){
               },
             json: true,   // <--Very important!!!
             body: body
-        })
-    
+        });   
 }
 
 var i = 0;
@@ -68,7 +67,7 @@ csv
       Promise.all(
           Object.keys(objDistricts).map(async (key, index) => {
             guid = await sendit(objDistricts[key]);
-            console.log('guid'+guid )
+            console.dir('guid'+guid )
             objNew[key]= guid;
         })).then( objNew => {
    console.dir(objNew);
