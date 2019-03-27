@@ -14,8 +14,8 @@ var theid = '';
 var objSchoolInDist = {};
 var objDistricts = {};
 
-function sendit(body){
-       request({
+async function sendit(body){
+       return await request({
             url: "https://api.jsonbin.io/b",
             method: "POST",
              headers: {
@@ -25,14 +25,7 @@ function sendit(body){
               },
             json: true,   // <--Very important!!!
             body: body
-        }, function (error, response, body){
-         //   console.log(body.id);
-            
-         //   objSchoolInDist[body.id] = district;
-         //   console.log(objSchoolInDist);
-
-            resolve(body.id);
-         });
+        })
     
 }
 
