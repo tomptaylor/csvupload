@@ -13,6 +13,7 @@ var strLastDist = '';
 var theid = '';
 var objSchoolInDist = {};
 var objDistricts = {};
+var objSchool = {};
 
 async function sendit(body){
        return await request({
@@ -41,7 +42,7 @@ csv
                 strLastDist = arrstr[0]; 
             } else {
 //            let results = await Promise.all([
-  //          sendit(arrSchool, strLastDist);
+            sendit(objSchool);
             objDistricts[strLastDist] = arrSchool;
             arrSchool = []; 
             strLastDist = arrstr[0];
@@ -49,7 +50,8 @@ csv
         }
         districts.push(arrstr[0]);
     }
-    arrSchool.push(arrstr[1]);
+    objSchool[arrstr[1]] = arrstr[1]
+   // arrSchool.push(arrstr[1]);
 //    console.log(arrSchool);
 
     // objResult.school = arrstr[1];
