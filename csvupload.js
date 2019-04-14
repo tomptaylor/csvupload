@@ -42,7 +42,7 @@ csv
                 strLastDist = arrstr[0]; 
             } else {
 //            let results = await Promise.all([
-  //          sendit(objSchool);
+            sendit(objSchool);
             objDistricts[strLastDist] = arrSchool;
             arrSchool = []; 
             strLastDist = arrstr[0];
