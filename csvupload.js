@@ -36,9 +36,9 @@ csv
  .on("data", function(data){
     if (i > 3 ) {
     arrstr = data.toString("utf-8").split(',');
-    if (districts.indexOf(arrstr[0]) === -1) {
-        if (strLastDist !== arrstr[0]) {
-            if (strLastDist === ''){
+    if (districts.indexOf(arrstr[0]) === -1) {  // if dist is not found in arr
+        if (strLastDist !== arrstr[0]) {        // if dist does not eq the last
+            if (strLastDist === ''){            // if this is the first, start tracking
                 strLastDist = arrstr[0]; 
             } else {
 //            let results = await Promise.all([
@@ -48,9 +48,9 @@ csv
             strLastDist = arrstr[0];
             }
         }
-        districts.push(arrstr[0]);
+        districts.push(arrstr[0]);              // add that dist into array
     }
-    objSchool[arrstr[1]] = arrstr[1]
+    objSchool[arrstr[1]] = arrstr[1]           // build out objschool
    // arrSchool.push(arrstr[1]);
 //    console.log(arrSchool);
 
@@ -67,6 +67,7 @@ csv
     var objNew = {};
     var guid = '';
     var allresults = await Promise.all(
+          console.log('all promises are back >>>>>>>>>>>>>>');
           Object.keys(objDistricts).map(async (key, index) => {
               try {
                 let response = await sendit(objDistricts[key]); 
