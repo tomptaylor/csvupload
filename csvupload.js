@@ -1,6 +1,3 @@
-/**
-* @param context {WebtaskContext}
-*/
 const formidable = require('formidable-memory');
 const csv = require('fast-csv');
 const request = require('request-promise');
@@ -13,7 +10,6 @@ var strLastDist = '';
 var theid = '';
 var objSchoolInDist = {};
 var objDistricts = {};
-var objSchool = {};
 
 async function sendit(body){
        return await request({
@@ -36,33 +32,25 @@ csv
  .on("data", function(data){
     if (i > 3 ) {
     arrstr = data.toString("utf-8").split(',');
-    if (districts.indexOf(arrstr[0]) === -1) {  // if dist is not found in arr
-        if (strLastDist !== arrstr[0]) {        // if dist does not eq the last
-            if (strLastDist === ''){            // if this is the first, start tracking
+    if (districts.indexOf(arrstr[0]) === -1) {
+        if (strLastDist !== arrstr[0]) {
+            if (strLastDist === ''){
                 strLastDist = arrstr[0]; 
             } else {
-//            let results = await Promise.all([
-            sendit(objSchool);
             objDistricts[strLastDist] = arrSchool;
             arrSchool = []; 
             strLastDist = arrstr[0];
             }
         }
-        districts.push(arrstr[0]);              // add that dist into array
+        districts.push(arrstr[0]);
     }
-    objSchool[arrstr[1]] = arrstr[1]           // build out objschool
-   // arrSchool.push(arrstr[1]);
-//    console.log(arrSchool);
-
-    // objResult.school = arrstr[1];
-    // if (objResult.school) {
-    //     arrResults.push(objResult);
-    // }
+    var objsch = {};
+    objsch[arrstr[1]] = arrstr[1];
+    arrSchool.push(objsch);
     }
     i++;
  })
  .on("end", async function(){
-  // sendit(Districts);
     console.log('on end >>>>>>>>>>>>>>');
     var objNew = {};
     var guid = '';
@@ -76,12 +64,10 @@ csv
                     console.log('Got an error:', err.message)
                 }
         }))
-        .then( (objNew) => {
    console.dir(objNew);
     sendit(objNew);
     res.writeHead(200, { 'Content-Type': 'text/html '});
     res.end('<h1>file uploaded!</h1>' );
-  });
  });
 
 };
