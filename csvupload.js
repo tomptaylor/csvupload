@@ -76,12 +76,12 @@ csv
                     console.log('Got an error:', err.message)
                 }
         }))
-//        .then( (objNew) => {
+        .then( (objNew) => {
    console.dir(objNew);
     sendit(objNew);
     res.writeHead(200, { 'Content-Type': 'text/html '});
     res.end('<h1>file uploaded!</h1>' );
- // });
+  });
  });
 
 };
