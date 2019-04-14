@@ -67,7 +67,6 @@ csv
     var objNew = {};
     var guid = '';
     var allresults = await Promise.all(
-          console.log('all promises are back >>>>>>>>>>>>>>');
           Object.keys(objDistricts).map(async (key, index) => {
               try {
                 let response = await sendit(objDistricts[key]); 
