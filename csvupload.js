@@ -46,7 +46,7 @@ csv
     }
     var objsch = {};
     objsch[arrstr[1]] = arrstr[1];
-    arrSchool.push(`${arrstr[1]}`+':'+`${arrstr[1]}`);
+    arrSchool.push(`${arrstr[1]}`+'":"'+`${arrstr[1]}`);
     }
     i++;
  })
