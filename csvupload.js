@@ -37,7 +37,9 @@ csv
             if (strLastDist === ''){
                 strLastDist = arrstr[0]; 
             } else {
-            objDistricts[strLastDist] = arrSchool;
+            //objDistricts[strLastDist] = arrSchool;
+            // try to save obj instead of arrschool
+            objDistricts[strLastDist] = objsch;
             arrSchool = []; 
             strLastDist = arrstr[0];
             }
@@ -46,7 +48,7 @@ csv
     }
     var objsch = {};
     objsch[arrstr[1]] = arrstr[1];
-    arrSchool.push(`${arrstr[1]}`+'":"'+`${arrstr[1]}`);
+  //  arrSchool.push(`${arrstr[1]}`+'":"'+`${arrstr[1]}`);
     }
     i++;
  })
