@@ -38,9 +38,6 @@ csv
             if (strLastDist === ''){
                 strLastDist = arrstr[0]; 
             } else {
-            //objDistricts[strLastDist] = arrSchool;
-            // try to save obj instead of arrschool
-            console.log(objsch);
             objDistricts[strLastDist] = objsch;
             arrSchool = []; 
             objsch = {};
@@ -50,7 +47,6 @@ csv
         districts.push(arrstr[0]);
     }
     objsch[arrstr[1]] = arrstr[1];
-  //  arrSchool.push(`${arrstr[1]}`+'":"'+`${arrstr[1]}`);
     }
     i++;
  })
