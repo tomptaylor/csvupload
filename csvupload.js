@@ -10,6 +10,7 @@ var strLastDist = '';
 var theid = '';
 var objSchoolInDist = {};
 var objDistricts = {};
+var objsch = {};
 
 async function sendit(body){
        return await request({
@@ -39,14 +40,15 @@ csv
             } else {
             //objDistricts[strLastDist] = arrSchool;
             // try to save obj instead of arrschool
+            console.log(objsch);
             objDistricts[strLastDist] = objsch;
             arrSchool = []; 
+            objsch = {};
             strLastDist = arrstr[0];
             }
         }
         districts.push(arrstr[0]);
     }
-    var objsch = {};
     objsch[arrstr[1]] = arrstr[1];
   //  arrSchool.push(`${arrstr[1]}`+'":"'+`${arrstr[1]}`);
     }
